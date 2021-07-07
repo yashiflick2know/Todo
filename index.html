@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <style media="screen">
+      #vueApp ul li span {
+        display: inline-block;
+        width: 150px;
+      }
+      #vueApp ul li {
+        padding: 5px
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Todolist application</h1>
+
+    <div id="vueApp">
+      
+      <p>Add new task</p>
+      <input v-model="currTodo" value="">
+     
+      
+      <input v-on:click="submit" type="button" value="Save">
+      <br><br>
+    
+      <p>Your todo list</p>
+    
+      
+      <ul>
+        <li v-for="todo of todos" :key="todo.id">
+          {{todo.name}}
+        </li>
+      </ul>
+      
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.27/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+  </body>
+</html>
